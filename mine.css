@@ -1,0 +1,19 @@
+table.grid {
+  border: 2px solid #080;
+  border-collapse: none;
+  font-size: 20px; }
+
+table.grid th,
+table.grid td {
+  width: 20px;
+  padding: 10px;
+  border: 2px solid #080;
+  vertical-align: middle; }
+
+table.grid th {
+  padding-top: 20px;
+  padding-bottom: 20px; }
+
+table.grid2 th,
+table.grid2 td {
+  width: 40px; }

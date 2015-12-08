@@ -73,6 +73,17 @@
                 output membership functions)
             </ul>
           </ul>
+          <aside class="notes">
+            <ul>
+              <li>The fuzzy logic model we focused on in class was the
+              Mamdani model: uses defuzzification to turn fuzzy output
+              set into crips output value.
+              <li>Sugeno model uses weighted averages to get directly
+              to a crisp output value.
+              <li>Mamdani is more human intuitive, but Sugeno is more
+              computationally efficient.
+            </ul>
+          </aside>
         </section>
 
         <section>
@@ -86,6 +97,12 @@
             <li>Commonly a 3x3 kernel is convolved with the source
             image to produce a image representing detected edges.
           </ul>
+          <aside class="notes">
+            <ul>
+              <li>Convolution: apply a kernel to every pixel in source
+              image to create a new image.
+            </ul>
+          </aside>
         </section>
 
         <section>
@@ -96,26 +113,36 @@
               <td>0.2</td>
               <td>0.1</td>
               <td class="fragment highlight-red" data-fragment-index="1">0.8</td>
-              <td>0.8</td>
+              <td class="fragment highlight-green" data-fragment-index="2">0.8</td>
+              <td>0.2</td>
             <tr>
               <td>0.3</td>
               <td>0.2</td>
               <td>0.1</td>
               <td class="fragment highlight-red" data-fragment-index="1">0.8</td>
-              <td>0.7</td>
+              <td class="fragment highlight-green" data-fragment-index="2">0.7</td>
+              <td>0.1</td>
             <tr>
               <td>0.3</td>
               <td>0.2</td>
               <td class="fragment highlight-red" data-fragment-index="1">0.8</td>
               <td>0.7</td>
-              <td>0.8</td>
+              <td class="fragment highlight-green" data-fragment-index="2">0.8</td>
+              <td>0.1</td>
             <tr>
               <td>0.3</td>
               <td>0.2</td>
               <td class="fragment highlight-red" data-fragment-index="1">0.7</td>
               <td>0.8</td>
-              <td>0.9</td>
+              <td class="fragment highlight-green" data-fragment-index="2">0.9</td>
+              <td>0.2</td>
           </table>
+          <aside class="notes">
+            <ul>
+              <li>Greyscale image with each pixel having a value of
+              0 for black to 1 for white.
+            </ul>
+          </aside>
         </section>
 
         <section>
@@ -191,6 +218,12 @@
               <td>0</td>
               <td>1</td>
           </table>
+          <aside class="notes">
+            <ul>
+              <li>Many other kernels for edge detection (like
+              Laplacian) and other purposes like image smoothing, etc.
+            </ul>
+          </aside>
         </section>
 
         <section>
@@ -202,24 +235,28 @@
               <td>0.1<span style="color: red;" class="fragment" data-fragment-index="1">&nbsp;*&nbsp;0</span></td>
               <td>0.8<span style="color: red;" class="fragment" data-fragment-index="1">&nbsp;*&nbsp;1</span></td>
               <td>0.8</td>
+              <td>0.2</td>
             <tr>
               <td>0.3</td>
               <td>0.2<span style="color: red;" class="fragment" data-fragment-index="1">&nbsp;*&nbsp;-1</span></td>
               <td>0.1<span style="color: red;" class="fragment" data-fragment-index="1">&nbsp;*&nbsp;0</span></td>
               <td>0.8<span style="color: red;" class="fragment" data-fragment-index="1">&nbsp;*&nbsp;1</span></td>
               <td>0.7</td>
+              <td>0.1</td>
             <tr>
               <td>0.3</td>
               <td>0.2<span style="color: red;" class="fragment" data-fragment-index="1">&nbsp;*&nbsp;-1</span></td>
               <td>0.8<span style="color: red;" class="fragment" data-fragment-index="1">&nbsp;*&nbsp;0</span></td>
               <td>0.7<span style="color: red;" class="fragment" data-fragment-index="1">&nbsp;*&nbsp;1</span></td>
               <td>0.8</td>
+              <td>0.1</td>
             <tr>
               <td>0.3</td>
               <td>0.2</td>
               <td>0.7</td>
               <td>0.8</td>
               <td>0.9</td>
+              <td>0.2</td>
           </table>
           <p class="fragment" data-fragment-index="2">0.2*-1 + 0.2*-1 + 0.2*-1<br>+ 0.8*1 + 0.8*1 + 0.8*1<br> = 1.7</p>
         </section>
@@ -232,28 +269,38 @@
                 <td><span class="fragment" data-fragment-index="1">-0.2</span></td>
                 <td class="fragment highlight-red" data-fragment-index="2"><span class="fragment" data-fragment-index="1">1.2</span></td>
                 <td class="fragment highlight-red" data-fragment-index="2"><span class="fragment" data-fragment-index="1">1.3</span></td>
-                  <td><span class="fragment" data-fragment-index="1"><span class="fragment highlight-green" data-fragment-index="3">-1.6</span></span></td>
+                  <td><span class="fragment" data-fragment-index="1"><span class="fragment highlight-green" data-fragment-index="3">-1.3</span></span></td>
+                  <td><span class="fragment" data-fragment-index="1"><span class="fragment highlight-green" data-fragment-index="3">-1.5</span></span></td>
             <tr>
                 <td><span class="fragment" data-fragment-index="1">0.6</span></td>
                   <td><span class="fragment" data-fragment-index="1">0.2</span></td>
                   <td class="fragment highlight-red" data-fragment-index="2">1.7</span></td>
                   <td class="fragment highlight-red" data-fragment-index="2"><span class="fragment" data-fragment-index="1">1.3</span></td>
+                  <td><span class="fragment" data-fragment-index="1"><span class="fragment highlight-green" data-fragment-index="3">-1.9</span></span></td>
                   <td><span class="fragment" data-fragment-index="1"><span class="fragment highlight-green" data-fragment-index="3">-2.3</span></span></td>
             <tr>
                 <td><span class="fragment" data-fragment-index="1">0.6</span></td>
                   <td><span class="fragment" data-fragment-index="1">0.7</span></td>
                   <td class="fragment highlight-red" data-fragment-index="2"><span class="fragment" data-fragment-index="1">1.7</span></td>
                   <td><span class="fragment" data-fragment-index="1">0.8</span></td>
-                  <td><span class="fragment" data-fragment-index="1"><span class="fragment highlight-green" data-fragment-index="3">-2.3</span></span></td>
+                  <td><span class="fragment" data-fragment-index="1"><span class="fragment highlight-green" data-fragment-index="3">-1.9</span></span></td>
+                  <td><span class="fragment" data-fragment-index="1"><span class="fragment highlight-green" data-fragment-index="3">-2.4</span></span></td>
             <tr>
                 <td><span class="fragment" data-fragment-index="1">0.4</span></td>
                   <td><span class="fragment" data-fragment-index="1">0.9</span></td>
                   <td class="fragment highlight-red" data-fragment-index="2"><span class="fragment" data-fragment-index="1">1.1</span></td>
                   <td><span class="fragment" data-fragment-index="1">0.2</span></td>
-                  <td><span class="fragment" data-fragment-index="1"><span class="fragment highlight-green" data-fragment-index="3">-1.5</span></span></td>
+                  <td><span class="fragment" data-fragment-index="1"><span class="fragment highlight-green" data-fragment-index="3">-1.2</span></span></td>
+                  <td><span class="fragment" data-fragment-index="1"><span class="fragment highlight-green" data-fragment-index="3">-1.7</span></span></td>
           </table>
           <p class="fragment" data-fragment-index="2"><font color="red">Left edge threshold: &ge; 1.0</font></p>
           <p class="fragment" data-fragment-index="3"><font color="green">Right edge threshold: &le; -1.0</font></p>
+          <aside class="notes">
+            <ul>
+              <li>Same done with horizontal kernel, and the values are
+              summed together for a general edge or gradient value.
+            </ul>
+          </aside>
         </section>
 
         <section>
@@ -280,6 +327,14 @@
             <li>∇D<sub>3</sub> = (z<sub>5</sub> − z<sub>3</sub>)<sup>2</sup> + (z<sub>7</sub> − z<sub>5</sub>)<sup>2</sup> (NE/SW Diagonal)<br>
             <li>∇D<sub>4</sub> = (z<sub>5</sub> − z<sub>4</sub>)<sup>2</sup> + (z<sub>6</sub> − z<sub>5</sub>)<sup>2</sup> (Horizontal)
           </ul>
+          <aside class="notes">
+            <ul>
+              <li>Now let's move from traditional edge detection to
+              using fuzzy logic.
+              <li>z5-z1 and z9-z5 is NW/SE diagonal gradient
+              <li>First...
+            </ul>
+          </aside>
         </section>
 
         <section>
@@ -291,22 +346,42 @@
             <li>∇D<sub>3</sub> = |z<sub>5</sub> − z<sub>3</sub>| + |z<sub>7</sub> − z<sub>5</sub>| (NE/SW Diagonal)<br>
             <li>∇D<sub>4</sub> = |z<sub>5</sub> − z<sub>4</sub>| + |z<sub>6</sub> − z<sub>5</sub>| (Horizontal)
           </ul>
+          <aside class="notes">
+            <ul>
+              <li>Add absolute values instead of squares
+            </ul>
+          </aside>
         </section>
 
         <section>
           <h2>Fuzzy Logic Rules</h2>
           <img src="rules.png"></img>
-          <p>K values can be modified to affect edge detection</p>
+          <aside class="notes">
+            <ul>
+              <li>K values can be modified to affect edge detection
+            </ul>
+          </aside>
         </section>
 
         <section>
           <h2>Fuzzy Membership Sets</h2>
           <img src="sets.png"></img>
+          <aside class="notes">
+            <ul>
+              <li>fuzzy sets for gradient
+              <li>VL - very low, LO - low, MD - medium, HI - high, VH - very high
+            </ul>
+          </aside>
         </section>
 
         <section>
           <h2>Directional Components</h2>
           <img src="components.png"></img>
+          <aside class="notes">
+            <ul>
+              <li>For each angle a weighted average value is calculated across each gradient rule.
+            </ul>
+          </aside>
         </section>
 
         <section>
@@ -314,6 +389,12 @@
           <p>
           y = y̅<sub>1</sub> + y̅<sub>2</sub> +  y̅<sub>3</sub> +  y̅<sub>4</sub>
           </p>
+          <aside class="notes">
+            <ul>
+              <li>Every angle value is summed to create the general
+              gradient or edge value.
+            </ul>
+          </aside>
         </section>
 
         <section>
